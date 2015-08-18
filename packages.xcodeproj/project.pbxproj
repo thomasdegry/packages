@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */; };
-		2E52A74F1B83CBAB000F4383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A74E1B83CBAB000F4383 /* ViewController.swift */; };
 		2E52A7521B83CBAB000F4383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7501B83CBAB000F4383 /* Main.storyboard */; };
 		2E52A7541B83CBAB000F4383 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7531B83CBAB000F4383 /* Images.xcassets */; };
 		2E52A7571B83CBAB000F4383 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */; };
 		2E52A7631B83CBAB000F4383 /* packagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A7621B83CBAB000F4383 /* packagesTests.swift */; };
+		2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		2E52A7471B83CBAB000F4383 /* packages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = packages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52A74B1B83CBAB000F4383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E52A74E1B83CBAB000F4383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E52A7511B83CBAB000F4383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E52A7531B83CBAB000F4383 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E52A7561B83CBAB000F4383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2E52A75C1B83CBAB000F4383 /* packagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = packagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52A7611B83CBAB000F4383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52A7621B83CBAB000F4383 /* packagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packagesTests.swift; sourceTree = "<group>"; };
+		2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */,
-				2E52A74E1B83CBAB000F4383 /* ViewController.swift */,
+				2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */,
 				2E52A7501B83CBAB000F4383 /* Main.storyboard */,
 				2E52A7531B83CBAB000F4383 /* Images.xcassets */,
 				2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E52A74F1B83CBAB000F4383 /* ViewController.swift in Sources */,
+				2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */,
 				2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +411,7 @@
 				2E52A7681B83CBAB000F4383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E52A7691B83CBAB000F4383 /* Build configuration list for PBXNativeTarget "packagesTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				2E52A76B1B83CBAB000F4383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
