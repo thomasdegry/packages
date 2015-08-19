@@ -10,15 +10,21 @@ import UIKit
 
 class PackageTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var metaLabel: UILabel!
+    @IBOutlet weak var trackingLabel: UILabel!
+    @IBOutlet weak var receiverNameLabel: UILabel!
+    @IBOutlet weak var contactImage: UIImageView! {
+        didSet {
+            contactImage.layer.cornerRadius = contactImage.frame.width / 2
+        }
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    var packageInformation: PackageInformation? {
+        didSet {
+            metaLabel.text = packageInformation?.meta
+            trackingLabel.text = packageInformation?.tracking
+            receiverNameLabel.text = packageInformation?.recipient
+        }
     }
 
 }
