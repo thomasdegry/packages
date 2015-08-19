@@ -13,6 +13,7 @@
 		2E52A7571B83CBAB000F4383 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */; };
 		2E52A7631B83CBAB000F4383 /* packagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A7621B83CBAB000F4383 /* packagesTests.swift */; };
 		2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */; };
+		2E9EC8E91B8518F3000EF555 /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		2E52A7611B83CBAB000F4383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52A7621B83CBAB000F4383 /* packagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packagesTests.swift; sourceTree = "<group>"; };
 		2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageListTableViewController.swift; sourceTree = "<group>"; };
+		2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */,
 				2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */,
+				2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */,
 				2E52A7501B83CBAB000F4383 /* Main.storyboard */,
 				2E52A7531B83CBAB000F4383 /* Images.xcassets */,
 				2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */,
+				2E9EC8E91B8518F3000EF555 /* PackageTableViewCell.swift in Sources */,
 				2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

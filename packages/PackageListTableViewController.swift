@@ -8,9 +8,15 @@
 
 import UIKit
 
+struct PackageInformation {
+    var recipient = ""
+    var meta = ""
+    var tracking = ""
+}
+
 class PackageListTableViewController: UITableViewController {
     
-    var names = ["Demetri", "Thomas", "Marina", "Zach"]
+    var packages = [PackageInformation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +26,13 @@ class PackageListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let packageOne = PackageInformation(recipient: "Demetri", meta: "08/18 - Marina", tracking: "foo12821")
+        let packageTwo = PackageInformation(recipient: "Thomas", meta: "08/18 - Rashel", tracking: "fsdaf128921")
+        let packageThree = PackageInformation(recipient: "Taylor", meta: "08/17", tracking: "foobar")
+        packages = [packageOne, packageTwo, packageThree]
+        
+        println("view did load")
     }
 
 
@@ -29,15 +42,17 @@ class PackageListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return packages.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("packageCell", forIndexPath: indexPath) as! UITableViewCell
-
-        cell.textLabel?.text = names[indexPath.row]
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("packageCell", forIndexPath: indexPath) as! PackageTableViewCell
+        
+        // Get te package at index from the packages array
+        // and pass it to the cell
+        cell.packageInformation = packages[indexPath.row]
+        
         return cell
     }
 
