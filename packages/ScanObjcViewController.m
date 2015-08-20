@@ -22,6 +22,10 @@
     self.scanner = [[MTBBarcodeScanner alloc] initWithPreviewView:self.view];
 }
 
+- (IBAction)dismiss:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     

@@ -102,7 +102,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scan Barcode" id="iAp-0U-LEN"/>
+                    <navigationItem key="navigationItem" title="Scan Barcode" id="iAp-0U-LEN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5H3-ui-KFx">
+                            <connections>
+                                <action selector="dismiss:" destination="zLD-Dw-Udd" id="hbs-Db-MCJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="08d-xa-Cez" kind="show" identifier="showDetails" id="lqH-Vp-WNe"/>
                     </connections>

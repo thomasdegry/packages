@@ -243,6 +243,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
+				TargetAttributes = {
+					9147A7124DBD477CC36BDF75 = {
+						DevelopmentTeam = Z3QGFL558K;
+					};
+				};
 			};
 			buildConfigurationList = F2739734C054B63C34300E10 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -296,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBDDE201483AFB08A8516437 /* Pods-packages-MTBBarcodeScanner-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -311,6 +317,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-packages-MTBBarcodeScanner/Pods-packages-MTBBarcodeScanner.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = MTBBarcodeScanner;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -362,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBDDE201483AFB08A8516437 /* Pods-packages-MTBBarcodeScanner-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -377,6 +385,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-packages-MTBBarcodeScanner/Pods-packages-MTBBarcodeScanner.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = MTBBarcodeScanner;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
