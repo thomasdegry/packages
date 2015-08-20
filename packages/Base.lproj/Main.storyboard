@@ -27,19 +27,19 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Corbett" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nz-rx-psC">
-                                            <rect key="frame" x="113" y="24" width="104" height="20.5"/>
+                                            <rect key="frame" x="113" y="24" width="104" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracking #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNg-rU-ZWv">
-                                            <rect key="frame" x="113" y="48.5" width="79" height="20.5"/>
+                                            <rect key="frame" x="113" y="49" width="79" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/18 - Marina" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lf-wd-THC">
-                                            <rect key="frame" x="113" y="73.5" width="112.5" height="20.5"/>
+                                            <rect key="frame" x="113" y="74" width="113" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
         <!--Scan Barcode-->
         <scene sceneID="6UG-DQ-Yde">
             <objects>
-                <viewController id="zLD-Dw-Udd" sceneMemberID="viewController">
+                <viewController id="zLD-Dw-Udd" customClass="ScanObjcViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RXl-dS-wAb"/>
                         <viewControllerLayoutGuide type="bottom" id="oZT-0B-iuL"/>
@@ -104,7 +104,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Scan Barcode" id="iAp-0U-LEN"/>
                     <connections>
-                        <segue destination="08d-xa-Cez" kind="show" id="lqH-Vp-WNe"/>
+                        <segue destination="08d-xa-Cez" kind="show" identifier="showDetails" id="lqH-Vp-WNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CcA-Bv-1yq" userLabel="First Responder" sceneMemberID="firstResponder"/>

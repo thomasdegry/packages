@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2A42751B8666C3007C261C /* ScanObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A42741B8666C3007C261C /* ScanObjcViewController.m */; };
+		2E37F01B1B86634300B0F0FC /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37F01A1B86634300B0F0FC /* ScanViewController.swift */; };
 		2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */; };
 		2E52A7521B83CBAB000F4383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7501B83CBAB000F4383 /* Main.storyboard */; };
 		2E52A7541B83CBAB000F4383 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7531B83CBAB000F4383 /* Images.xcassets */; };
@@ -14,6 +16,7 @@
 		2E52A7631B83CBAB000F4383 /* packagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A7621B83CBAB000F4383 /* packagesTests.swift */; };
 		2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */; };
 		2E9EC8E91B8518F3000EF555 /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */; };
+		62629B7C937FFBFF9737D8BC /* Pods_packages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C02037AFF63546F79BB63BB /* Pods_packages.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E2A42731B8666C3007C261C /* ScanObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanObjcViewController.h; sourceTree = "<group>"; };
+		2E2A42741B8666C3007C261C /* ScanObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanObjcViewController.m; sourceTree = "<group>"; };
+		2E37F01A1B86634300B0F0FC /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		2E52A7471B83CBAB000F4383 /* packages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = packages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52A74B1B83CBAB000F4383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +44,10 @@
 		2E52A7621B83CBAB000F4383 /* packagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packagesTests.swift; sourceTree = "<group>"; };
 		2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageListTableViewController.swift; sourceTree = "<group>"; };
 		2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTableViewCell.swift; sourceTree = "<group>"; };
+		2E9EC9461B8662A3000EF555 /* packages-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "packages-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C02037AFF63546F79BB63BB /* Pods_packages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_packages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB26637D6260DE256420648 /* Pods-packages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-packages.release.xcconfig"; path = "Pods/Target Support Files/Pods-packages/Pods-packages.release.xcconfig"; sourceTree = "<group>"; };
+		EA909D2E1C6FBA811F978468 /* Pods-packages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-packages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-packages/Pods-packages.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62629B7C937FFBFF9737D8BC /* Pods_packages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +75,8 @@
 				2E52A7491B83CBAB000F4383 /* packages */,
 				2E52A75F1B83CBAB000F4383 /* packagesTests */,
 				2E52A7481B83CBAB000F4383 /* Products */,
+				CD9EA8A5F510F7A647A8E9BA /* Pods */,
+				B830F610FAD09139B7FCA3DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +95,10 @@
 				2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */,
 				2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */,
 				2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */,
+				2E37F01A1B86634300B0F0FC /* ScanViewController.swift */,
+				2E2A42731B8666C3007C261C /* ScanObjcViewController.h */,
+				2E2A42741B8666C3007C261C /* ScanObjcViewController.m */,
+				2E9EC9461B8662A3000EF555 /* packages-Bridging-Header.h */,
 				2E52A7501B83CBAB000F4383 /* Main.storyboard */,
 				2E52A7531B83CBAB000F4383 /* Images.xcassets */,
 				2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */,
@@ -115,6 +132,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B830F610FAD09139B7FCA3DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C02037AFF63546F79BB63BB /* Pods_packages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD9EA8A5F510F7A647A8E9BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA909D2E1C6FBA811F978468 /* Pods-packages.debug.xcconfig */,
+				AEB26637D6260DE256420648 /* Pods-packages.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E52A7661B83CBAB000F4383 /* Build configuration list for PBXNativeTarget "packages" */;
 			buildPhases = (
+				C9C222C9000931B696199CE9 /* Check Pods Manifest.lock */,
 				2E52A7431B83CBAB000F4383 /* Sources */,
 				2E52A7441B83CBAB000F4383 /* Frameworks */,
 				2E52A7451B83CBAB000F4383 /* Resources */,
+				89648420979AEC60B9B618FA /* Embed Pods Frameworks */,
+				3C8A6C983E998CC8F3F6BA74 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +247,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C8A6C983E998CC8F3F6BA74 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-packages/Pods-packages-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89648420979AEC60B9B618FA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-packages/Pods-packages-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9C222C9000931B696199CE9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E52A7431B83CBAB000F4383 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,6 +303,8 @@
 				2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */,
 				2E9EC8E91B8518F3000EF555 /* PackageTableViewCell.swift in Sources */,
 				2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */,
+				2E37F01B1B86634300B0F0FC /* ScanViewController.swift in Sources */,
+				2E2A42751B8666C3007C261C /* ScanObjcViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,21 +431,28 @@
 		};
 		2E52A7671B83CBAB000F4383 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA909D2E1C6FBA811F978468 /* Pods-packages.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = packages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "packages/packages-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2E52A7681B83CBAB000F4383 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEB26637D6260DE256420648 /* Pods-packages.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = packages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "packages/packages-Bridging-Header.h";
 			};
 			name = Release;
 		};
