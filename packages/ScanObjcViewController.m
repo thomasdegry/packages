@@ -8,10 +8,11 @@
 
 #import "ScanObjcViewController.h"
 #import "MTBBarcodeScanner/MTBBarcodeScanner.h"
-
+#import "Packages-Swift.h"
 
 @interface ScanObjcViewController ()
 @property (strong, nonatomic) MTBBarcodeScanner *scanner;
+@property (strong, nonatomic) NSString *barCode; // Will hold the scanned code
 @end
 
 @implementation ScanObjcViewController
@@ -33,15 +34,30 @@
         if (success) {
             [self.scanner startScanningWithResultBlock:^(NSArray *codes) {
                 AVMetadataMachineReadableCodeObject *code = [codes firstObject];
-                NSLog(@"Found code: %@", code.stringValue);
+                
+                // Store the bar code in the class
+                self.barCode = code.stringValue;
+                
+                // Perform segue to next screen
                 [self performSegueWithIdentifier:@"showDetails" sender:self];
                 
+                // Stop scanning to avoid memory issues
                 [self.scanner stopScanning];
             }];
         } else {
             // The user denied access to the camera
         }
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showDetails"]) {
+        // Cast the destinationVC to a DetailsTableViewController
+        DetailsTableViewController *destinationVC = (DetailsTableViewController *)segue.destinationViewController;
+        
+        // Set the barCode porperty on the detailsTableVC with the one declared on top
+        destinationVC.barCode = self.barCode;
+    }
 }
 
 @end
