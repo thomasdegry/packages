@@ -25,7 +25,7 @@ class EmailHelper {
         
         return [
             "key" : "fzqml666hIkK5fem6YncLg",
-            "template_name": "selfie-notification",
+            "template_name": "package-notification",
             "template_content": [
                 [
                     "name": "",
@@ -59,8 +59,8 @@ class EmailHelper {
                         "rcpt": employee.email,
                         "vars": [
                             [
-                                "name": "PHOTOURL",
-                                "content" : "https://c1.staticflickr.com/7/6179/6201073286_e1f48e7145_b.jpg"
+                                "name": "EMPLOYEE_NAME",
+                                "content" : employee.name
                             ]
                         ]
                     ]
