@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2E2A42751B8666C3007C261C /* ScanObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A42741B8666C3007C261C /* ScanObjcViewController.m */; };
-		2E37F01B1B86634300B0F0FC /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37F01A1B86634300B0F0FC /* ScanViewController.swift */; };
 		2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */; };
 		2E52A7521B83CBAB000F4383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7501B83CBAB000F4383 /* Main.storyboard */; };
 		2E52A7541B83CBAB000F4383 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7531B83CBAB000F4383 /* Images.xcassets */; };
 		2E52A7571B83CBAB000F4383 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */; };
 		2E52A7631B83CBAB000F4383 /* packagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A7621B83CBAB000F4383 /* packagesTests.swift */; };
 		2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */; };
+		2E5333391B8E50C5007C6EA6 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5333381B8E50C4007C6EA6 /* EmailHelper.swift */; };
 		2E626BC01B8BC0E500089551 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E626BBF1B8BC0E500089551 /* DetailsTableViewController.swift */; };
 		2E626BC21B8BC7F900089551 /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E626BC11B8BC7F900089551 /* EmployeeTableViewController.swift */; };
 		2E626BC41B8BC81500089551 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E626BC31B8BC81500089551 /* Employee.swift */; };
@@ -35,7 +35,6 @@
 /* Begin PBXFileReference section */
 		2E2A42731B8666C3007C261C /* ScanObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanObjcViewController.h; sourceTree = "<group>"; };
 		2E2A42741B8666C3007C261C /* ScanObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanObjcViewController.m; sourceTree = "<group>"; };
-		2E37F01A1B86634300B0F0FC /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		2E52A7471B83CBAB000F4383 /* packages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = packages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52A74B1B83CBAB000F4383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		2E52A7611B83CBAB000F4383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52A7621B83CBAB000F4383 /* packagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packagesTests.swift; sourceTree = "<group>"; };
 		2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageListTableViewController.swift; sourceTree = "<group>"; };
+		2E5333381B8E50C4007C6EA6 /* EmailHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
 		2E626BBF1B8BC0E500089551 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		2E626BC11B8BC7F900089551 /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
 		2E626BC31B8BC81500089551 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
@@ -101,13 +101,13 @@
 				2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */,
 				2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */,
 				2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */,
-				2E37F01A1B86634300B0F0FC /* ScanViewController.swift */,
 				2E2A42731B8666C3007C261C /* ScanObjcViewController.h */,
 				2E2A42741B8666C3007C261C /* ScanObjcViewController.m */,
 				2E9EC9461B8662A3000EF555 /* packages-Bridging-Header.h */,
 				2E626BBF1B8BC0E500089551 /* DetailsTableViewController.swift */,
 				2E626BC11B8BC7F900089551 /* EmployeeTableViewController.swift */,
 				2E626BC31B8BC81500089551 /* Employee.swift */,
+				2E5333381B8E50C4007C6EA6 /* EmailHelper.swift */,
 				2E52A7501B83CBAB000F4383 /* Main.storyboard */,
 				2E52A7531B83CBAB000F4383 /* Images.xcassets */,
 				2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */,
@@ -314,7 +314,7 @@
 				2E626BC41B8BC81500089551 /* Employee.swift in Sources */,
 				2E9EC8E91B8518F3000EF555 /* PackageTableViewCell.swift in Sources */,
 				2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */,
-				2E37F01B1B86634300B0F0FC /* ScanViewController.swift in Sources */,
+				2E5333391B8E50C5007C6EA6 /* EmailHelper.swift in Sources */,
 				2E626BC21B8BC7F900089551 /* EmployeeTableViewController.swift in Sources */,
 				2E626BC01B8BC0E500089551 /* DetailsTableViewController.swift in Sources */,
 				2E2A42751B8666C3007C261C /* ScanObjcViewController.m in Sources */,

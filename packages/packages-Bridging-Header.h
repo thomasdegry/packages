@@ -3,3 +3,4 @@
 //
 
 #import <MTBBarcodeScanner/MTBBarcodeScanner.h>
+#import "ScanObjcViewController.h"

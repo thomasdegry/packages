@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol EmployeeDelegate {
+    func didPickEmployee(employee: Employee)
+}
+
 class EmployeeTableViewController: UITableViewController {
     
     var employees = [Employee]()
+    var delegate: EmployeeDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +47,11 @@ class EmployeeTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Get the employee for that row
         var selectedEmployee = employees[indexPath.row]
-        println("Selected the employee with name \(selectedEmployee.name)")
+        
+        // Pass information back
+        delegate?.didPickEmployee(selectedEmployee)
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }

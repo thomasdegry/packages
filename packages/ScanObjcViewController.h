@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ScanDelegate <NSObject>
+
+- (void)didScanBarCode:(NSString *)barCode;
+
+@end
+
 @interface ScanObjcViewController : UIViewController
+
+@property (weak, nonatomic) id <ScanDelegate> delegate;
 
 @end

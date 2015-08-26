@@ -14,9 +14,13 @@ struct PackageInformation {
     var tracking = ""
 }
 
-class PackageListTableViewController: UITableViewController {
+class PackageListTableViewController: UITableViewController, PackageDetailsDelegate {
     
-    var packages = [PackageInformation]()
+    @IBOutlet weak var statusControl: UISegmentedControl!
+    var openPackages = [PackageInformation]()
+    var pickedUpPackages = [PackageInformation]()
+    
+    let emailHelper = EmailHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +29,33 @@ class PackageListTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+    }
+    
+    @IBAction func didChangeStatus(sender: UISegmentedControl) {
+        self.tableView.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetails" {
+            let navVC = segue.destinationViewController as! UINavigationController
+            let destinationVC = navVC.topViewController as! DetailsTableViewController
+            
+            destinationVC.delegate = self
+        }
+    }
+    
+    func didEnterPackageDetails(barcode: String, employee: Employee) {
+        let newPackage = PackageInformation(recipient: employee.name, meta: "", tracking: barcode)
         
-        let packageOne = PackageInformation(recipient: "Demetri", meta: "08/18 - Marina", tracking: "foo12821")
-        let packageTwo = PackageInformation(recipient: "Thomas", meta: "08/18 - Rashel", tracking: "fsdaf128921")
-        let packageThree = PackageInformation(recipient: "Taylor", meta: "08/17", tracking: "foobar")
-        packages = [packageOne, packageTwo, packageThree]
+        // Store in array
+        openPackages.append(newPackage)
         
-        println("view did load")
+        // Reload tableview
+        self.tableView.reloadData()
+        
+        // Send out email
+        emailHelper.sendPickUpEmailTo(employee)
     }
 
 
@@ -42,16 +65,64 @@ class PackageListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return packages.count
+        return statusControl.selectedSegmentIndex == 0 ? openPackages.count : pickedUpPackages.count
     }
 
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        let pickUpAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal,
+            title: "Pick Up") { (action, indexPath) -> Void in
+                let package = self.openPackages[indexPath.row]
+                
+                // Delete in open array
+                self.openPackages.removeAtIndex(indexPath.row)
+                
+                // Delete from tableView
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                
+                // Add in pickedUp array
+                self.pickedUpPackages.append(package)
+        }
+        
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal,
+            title: "Delete") { (action, indexPath) -> Void in
+                let package = self.openPackages[indexPath.row]
+                println("Delete package for \(package.recipient)")
+        }
+        
+        deleteAction.backgroundColor = UIColor.redColor()
+        
+        let setOpen = UITableViewRowAction(style: UITableViewRowActionStyle.Normal,
+            title: "Reopen") { (action, indexPath) -> Void in
+                let package = self.pickedUpPackages[indexPath.row]
+                
+                // Delete in open array
+                self.pickedUpPackages.removeAtIndex(indexPath.row)
+                
+                // Delete from tableView
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                
+                // Add in pickedUp array
+                self.openPackages.append(package)
+        }
+
+        return self.statusControl.selectedSegmentIndex == 0 ? [pickUpAction, deleteAction] : [setOpen, deleteAction]
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("packageCell", forIndexPath: indexPath) as! PackageTableViewCell
         
         // Get te package at index from the packages array
         // and pass it to the cell
-        cell.packageInformation = packages[indexPath.row]
+        let packageArray = statusControl.selectedSegmentIndex == 0 ? openPackages : pickedUpPackages
+        cell.packageInformation = packageArray[indexPath.row]
         
         return cell
     }

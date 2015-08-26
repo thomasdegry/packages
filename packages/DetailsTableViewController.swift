@@ -8,9 +8,21 @@
 
 import UIKit
 
-class DetailsTableViewController: UITableViewController {
+protocol PackageDetailsDelegate {
+    func didEnterPackageDetails(barcode: String, employee: Employee)
+}
+
+class DetailsTableViewController: UITableViewController, ScanDelegate, EmployeeDelegate, UITextFieldDelegate {
     
+    var delegate: PackageDetailsDelegate?
     var barCode: String?
+    var selectedEmployee: Employee? {
+        didSet {
+            employeeTextField.text = selectedEmployee?.name
+        }
+    }
+    
+    @IBOutlet weak var employeeTextField: UITextField!
     @IBOutlet weak var senderTextField: UITextField!
     @IBOutlet var saveButton: UIBarButtonItem!
     
@@ -19,6 +31,60 @@ class DetailsTableViewController: UITableViewController {
         
         // Set save button to the top right
         self.navigationItem.rightBarButtonItem = saveButton
+    }
+    
+    @IBAction func dismiss(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func save(sender: UIBarButtonItem) {
+        // Send delegate message
+        delegate?.didEnterPackageDetails(barCode!, employee: selectedEmployee!)
+        
+        // Dismiss
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showBarcodeCamera" {
+            let navVC = segue.destinationViewController as! UINavigationController
+            let destinationVC = navVC.topViewController as! ScanObjcViewController
+            destinationVC.delegate = self
+        } else if segue.identifier == "showEmployeeList" {
+            let navVC = segue.destinationViewController as! UINavigationController
+            let destinationVC = navVC.topViewController as! EmployeeTableViewController
+            destinationVC.delegate = self
+        }
+    }
+    
+    func checkSaveButtonStatus() {
+        if let barCode = barCode, let selectedEmployee = selectedEmployee {
+            saveButton.enabled = true
+        } else {
+            saveButton.enabled = false
+        }
+    }
+    
+    // MARK: - UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        senderTextField.resignFirstResponder()
+        
+        return true
+    }
+    
+    // MARK: - Scan Delegate
+    func didScanBarCode(barCode: String!) {
+        self.barCode = barCode
+        self.tableView.reloadData()
+        
+        checkSaveButtonStatus()
+    }
+    
+    // MARK: - EmployeeDelegate
+    func didPickEmployee(employee: Employee) {
+        selectedEmployee = employee
+        
+        checkSaveButtonStatus()
     }
     
     // Mark: - UITableView Delegate
@@ -31,9 +97,7 @@ class DetailsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0 {
-            // Show contacts list
-        } else  if indexPath.row == 2 {
+        if indexPath.row == 2 {
             // Show camera
         }
     }
