@@ -8,13 +8,13 @@
 
 // Alamofire
 #define COCOAPODS_POD_AVAILABLE_Alamofire
-#define COCOAPODS_VERSION_MAJOR_Alamofire 1
-#define COCOAPODS_VERSION_MINOR_Alamofire 3
-#define COCOAPODS_VERSION_PATCH_Alamofire 1
+#define COCOAPODS_VERSION_MAJOR_Alamofire 2
+#define COCOAPODS_VERSION_MINOR_Alamofire 0
+#define COCOAPODS_VERSION_PATCH_Alamofire 2
 
 // MTBBarcodeScanner
 #define COCOAPODS_POD_AVAILABLE_MTBBarcodeScanner
 #define COCOAPODS_VERSION_MAJOR_MTBBarcodeScanner 1
-#define COCOAPODS_VERSION_MINOR_MTBBarcodeScanner 6
-#define COCOAPODS_VERSION_PATCH_MTBBarcodeScanner 1
+#define COCOAPODS_VERSION_MINOR_MTBBarcodeScanner 8
+#define COCOAPODS_VERSION_PATCH_MTBBarcodeScanner 3
 

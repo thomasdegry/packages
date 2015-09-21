@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'packages' do
 pod 'MTBBarcodeScanner'
-pod 'Alamofire', '~> 1.3'
+pod 'Alamofire', '~> 2.0.2'
 end
 
 target 'packagesTests' do

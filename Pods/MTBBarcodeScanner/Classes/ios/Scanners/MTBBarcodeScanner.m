@@ -9,6 +9,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MTBBarcodeScanner.h"
 
+CGFloat const kFocalPointOfInterestX = 0.5;
+CGFloat const kFocalPointOfInterestY = 0.5;
+
 @interface MTBBarcodeScanner () <AVCaptureMetadataOutputObjectsDelegate>
 /*!
  @property session
@@ -57,17 +60,6 @@
 @property (nonatomic, weak) UIView *previewView;
 
 /*!
- @property resultBlock
- @abstract
- Block that's called for every barcode captured. Returns an array of AVMetadataMachineReadableCodeObjects.
- 
- @discussion
- The resultBlock is called once for every frame that at least one valid barcode is found.
- The returned array consists of AVMetadataMachineReadableCodeObject objects.
- */
-@property (nonatomic, copy) void (^resultBlock)(NSArray *codes);
-
-/*!
  @property hasExistingSession
  @abstract
  BOOL that is set to YES when a new valid session is created and set to NO when stopScanning
@@ -88,7 +80,7 @@
  The auto focus range restriction the AVCaptureDevice was initially configured for when scanning started.
  
  @discussion
- Then startScanning is called, the auto focus range restriction of the default AVCaptureDevice
+ When startScanning is called, the auto focus range restriction of the default AVCaptureDevice
  is stored. When stopScanning is called, the AVCaptureDevice is reset to the initial range restriction
  to prevent a bug in the AVFoundation framework.
  */
@@ -100,16 +92,13 @@
  The focus point the AVCaptureDevice was initially configured for when scanning started.
  
  @discussion
- Then startScanning is called, the focus point of the default AVCaptureDevice
+ When startScanning is called, the focus point of the default AVCaptureDevice
  is stored. When stopScanning is called, the AVCaptureDevice is reset to the initial focal point
  to prevent a bug in the AVFoundation framework.
  */
 @property (nonatomic, assign) CGPoint initialFocusPoint;
 
 @end
-
-CGFloat const kFocalPointOfInterestX = 0.5;
-CGFloat const kFocalPointOfInterestY = 0.5;
 
 @implementation MTBBarcodeScanner
 
@@ -201,6 +190,10 @@ CGFloat const kFocalPointOfInterestY = 0.5;
     }
 }
 
+- (void)startScanning {
+    [self startScanningWithResultBlock:self.resultBlock];
+}
+
 - (void)startScanningWithResultBlock:(void (^)(NSArray *codes))resultBlock {
     NSAssert([MTBBarcodeScanner cameraIsPresent], @"Attempted to start scanning on a device with no camera. Check requestCameraPermissionWithSuccess: method before calling startScanningWithResultBlock:");
     NSAssert(![MTBBarcodeScanner scanningIsProhibited], @"Scanning is prohibited on this device. \
@@ -216,8 +209,12 @@ CGFloat const kFocalPointOfInterestY = 0.5;
     
     [self.session startRunning];
     self.capturePreviewLayer.cornerRadius = self.previewView.layer.cornerRadius;
-    [self.previewView.layer addSublayer:self.capturePreviewLayer];
+    [self.previewView.layer insertSublayer:self.capturePreviewLayer atIndex:0];
     [self refreshVideoOrientation];
+    
+    if (self.didStartScanningBlock) {
+        self.didStartScanningBlock();
+    }
 }
 
 - (void)stopScanning {
@@ -427,6 +424,8 @@ CGFloat const kFocalPointOfInterestY = 0.5;
             deviceInput.device.focusPointOfInterest = CGPointMake(kFocalPointOfInterestX, kFocalPointOfInterestY);
         }
         
+        [self updateTorchModeForCurrentSettings];
+        
         [deviceInput.device unlockForConfiguration];
     }
     
@@ -456,6 +455,69 @@ CGFloat const kFocalPointOfInterestY = 0.5;
     self.currentCaptureDeviceInput = nil;
 }
 
+#pragma mark - Torch Control
+
+- (void)setTorchMode:(MTBTorchMode)torchMode {
+    _torchMode = torchMode;
+    [self updateTorchModeForCurrentSettings];
+}
+
+- (void)toggleTorch {
+    if (self.torchMode == MTBTorchModeAuto || self.torchMode == MTBTorchModeOff) {
+        self.torchMode = MTBTorchModeOn;
+    } else {
+        self.torchMode = MTBTorchModeOff;
+    }
+}
+
+- (void)updateTorchModeForCurrentSettings {
+    if ([self.currentCaptureDeviceInput.device hasTorch]) {
+        if ([self.currentCaptureDeviceInput.device lockForConfiguration:nil] == YES) {
+            
+            AVCaptureTorchMode mode = [self avTorchModeForMTBTorchMode:self.torchMode];
+            [self.currentCaptureDeviceInput.device setTorchMode:mode];
+            [self.currentCaptureDeviceInput.device unlockForConfiguration];
+        }
+    }
+}
+
+- (BOOL)hasTorch {
+    AVCaptureDevice *captureDevice = [self newCaptureDeviceWithCamera:self.camera];
+    AVCaptureDeviceInput *input = [self deviceInputForCaptureDevice:captureDevice];
+    return input.device.hasTorch;
+}
+
+- (AVCaptureTorchMode)avTorchModeForMTBTorchMode:(MTBTorchMode)torchMode {
+    AVCaptureTorchMode mode = AVCaptureTorchModeOff;
+    
+    if (torchMode == MTBTorchModeOn) {
+        mode = AVCaptureTorchModeOn;
+    } else if (torchMode == MTBTorchModeAuto) {
+        mode = AVCaptureTorchModeAuto;
+    }
+    
+    return mode;
+}
+
+#pragma mark - Capture
+
+- (void)freezeCapture {
+    self.capturePreviewLayer.connection.enabled = NO;
+    
+    if (self.hasExistingSession) {
+        [self.session stopRunning];
+    }
+}
+
+- (void)unfreezeCapture {
+    self.capturePreviewLayer.connection.enabled = YES;
+    
+    if (self.hasExistingSession && !self.session.isRunning) {
+        [self setDeviceInput:self.currentCaptureDeviceInput session:self.session];
+        [self.session startRunning];
+    }
+}
+
 #pragma mark - Setters
 
 - (void)setCamera:(MTBCamera)camera {
@@ -467,6 +529,12 @@ CGFloat const kFocalPointOfInterestY = 0.5;
     }
     
     _camera = camera;
+}
+
+#pragma mark - Getters
+
+- (CALayer *)previewLayer {
+    return self.capturePreviewLayer;
 }
 
 @end

@@ -20,8 +20,8 @@ class EmployeeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var d = Employee(name: "Demetri", email: "demetri@isl.co")
-        var t = Employee(name: "Thomas", email: "thomas@isl.co")
+        let d = Employee(name: "Demetri", email: "demetri@isl.co")
+        let t = Employee(name: "Thomas", email: "thomas@isl.co")
         
         employees = [d, t]
     }
@@ -36,9 +36,9 @@ class EmployeeTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("employeeCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("employeeCell", forIndexPath: indexPath) 
 
-        var currentEmployee = employees[indexPath.row]
+        let currentEmployee = employees[indexPath.row]
         cell.textLabel?.text = currentEmployee.name
         cell.detailTextLabel?.text = currentEmployee.email
 
@@ -48,7 +48,7 @@ class EmployeeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Get the employee for that row
-        var selectedEmployee = employees[indexPath.row]
+        let selectedEmployee = employees[indexPath.row]
         
         // Pass information back
         delegate?.didPickEmployee(selectedEmployee)

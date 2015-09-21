@@ -68,7 +68,7 @@ class PackageListTableViewController: UITableViewController, PackageDetailsDeleg
         return statusControl.selectedSegmentIndex == 0 ? openPackages.count : pickedUpPackages.count
     }
 
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let pickUpAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal,
             title: "Pick Up") { (action, indexPath) -> Void in
                 let package = self.openPackages[indexPath.row]
@@ -86,7 +86,7 @@ class PackageListTableViewController: UITableViewController, PackageDetailsDeleg
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal,
             title: "Delete") { (action, indexPath) -> Void in
                 let package = self.openPackages[indexPath.row]
-                println("Delete package for \(package.recipient)")
+                print("Delete package for \(package.recipient)")
         }
         
         deleteAction.backgroundColor = UIColor.redColor()

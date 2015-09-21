@@ -15,9 +15,9 @@ class EmailHelper {
         Alamofire.request(.POST, "https://mandrillapp.com/api/1.0/messages/send-template.json",
             parameters: mandrillVarsForEmployee(employee), encoding: ParameterEncoding.JSON, headers: nil).response {
                 request, response, data, error in
-            println(request)
-            println(response)
-            println(error)
+            print(request)
+            print(response)
+            print(error)
         }
     }
     
