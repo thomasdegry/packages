@@ -19,11 +19,15 @@ class PackageTableViewCell: UITableViewCell {
         }
     }
     
-    var packageInformation: PackageInformation? {
+    var package: Package? {
         didSet {
-            metaLabel.text = packageInformation?.meta
-            trackingLabel.text = packageInformation?.tracking
-            receiverNameLabel.text = packageInformation?.recipient
+            guard let package = package else {
+                return
+            }
+            
+            metaLabel.text = package.meta
+            trackingLabel.text = package.tracking
+            receiverNameLabel.text = package.recipient
         }
     }
 

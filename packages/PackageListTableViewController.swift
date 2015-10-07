@@ -8,17 +8,11 @@
 
 import UIKit
 
-struct PackageInformation {
-    var recipient = ""
-    var meta = ""
-    var tracking = ""
-}
-
 class PackageListTableViewController: UITableViewController, PackageDetailsDelegate {
     
     @IBOutlet weak var statusControl: UISegmentedControl!
-    var openPackages = [PackageInformation]()
-    var pickedUpPackages = [PackageInformation]()
+    var openPackages = [Package]()
+    var pickedUpPackages = [Package]()
     
     let emailHelper = EmailHelper()
 
@@ -46,7 +40,7 @@ class PackageListTableViewController: UITableViewController, PackageDetailsDeleg
     }
     
     func didEnterPackageDetails(barcode: String, employee: Employee) {
-        let newPackage = PackageInformation(recipient: employee.name, meta: "", tracking: barcode)
+        let newPackage = Package(recipient: employee.name, meta: "", tracking: barcode)
         
         // Store in array
         openPackages.append(newPackage)
@@ -122,7 +116,7 @@ class PackageListTableViewController: UITableViewController, PackageDetailsDeleg
         // Get te package at index from the packages array
         // and pass it to the cell
         let packageArray = statusControl.selectedSegmentIndex == 0 ? openPackages : pickedUpPackages
-        cell.packageInformation = packageArray[indexPath.row]
+        cell.package = packageArray[indexPath.row]
         
         return cell
     }

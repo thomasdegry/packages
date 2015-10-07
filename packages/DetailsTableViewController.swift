@@ -58,7 +58,7 @@ class DetailsTableViewController: UITableViewController, ScanDelegate, EmployeeD
     }
     
     func checkSaveButtonStatus() {
-        if let barCode = barCode, let selectedEmployee = selectedEmployee {
+        if let _ = barCode, let _ = selectedEmployee {
             saveButton.enabled = true
         } else {
             saveButton.enabled = false

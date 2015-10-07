@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E2A42751B8666C3007C261C /* ScanObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A42741B8666C3007C261C /* ScanObjcViewController.m */; };
+		2E4294A41BC4BF4B00FDC95B /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294A31BC4BF4B00FDC95B /* Package.swift */; settings = {ASSET_TAGS = (); }; };
+		2E4CCFAD1BC4C2D80052DD97 /* packages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E4CCFAB1BC4C2D80052DD97 /* packages.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */; };
 		2E52A7521B83CBAB000F4383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7501B83CBAB000F4383 /* Main.storyboard */; };
 		2E52A7541B83CBAB000F4383 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E52A7531B83CBAB000F4383 /* Images.xcassets */; };
@@ -15,9 +17,14 @@
 		2E52A7631B83CBAB000F4383 /* packagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A7621B83CBAB000F4383 /* packagesTests.swift */; };
 		2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */; };
 		2E5333391B8E50C5007C6EA6 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5333381B8E50C4007C6EA6 /* EmailHelper.swift */; };
+		2E58E7471BC4C19B0045CF8E /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58E7461BC4C19B0045CF8E /* ContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		2E58E7491BC4C1B20045CF8E /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58E7481BC4C1B20045CF8E /* ContactStore.swift */; settings = {ASSET_TAGS = (); }; };
 		2E626BC01B8BC0E500089551 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E626BBF1B8BC0E500089551 /* DetailsTableViewController.swift */; };
 		2E626BC21B8BC7F900089551 /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E626BC11B8BC7F900089551 /* EmployeeTableViewController.swift */; };
 		2E626BC41B8BC81500089551 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E626BC31B8BC81500089551 /* Employee.swift */; };
+		2E8DACA21BC4C40C00DBA173 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DACA01BC4C40C00DBA173 /* Contact+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		2E8DACA31BC4C40C00DBA173 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DACA11BC4C40C00DBA173 /* Contact.swift */; settings = {ASSET_TAGS = (); }; };
+		2E8DACA51BC4C59000DBA173 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DACA41BC4C59000DBA173 /* ApiHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		2E9EC8E91B8518F3000EF555 /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */; };
 		62629B7C937FFBFF9737D8BC /* Pods_packages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C02037AFF63546F79BB63BB /* Pods_packages.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -35,6 +42,8 @@
 /* Begin PBXFileReference section */
 		2E2A42731B8666C3007C261C /* ScanObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanObjcViewController.h; sourceTree = "<group>"; };
 		2E2A42741B8666C3007C261C /* ScanObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanObjcViewController.m; sourceTree = "<group>"; };
+		2E4294A31BC4BF4B00FDC95B /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		2E4CCFAC1BC4C2D80052DD97 /* packages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = packages.xcdatamodel; sourceTree = "<group>"; };
 		2E52A7471B83CBAB000F4383 /* packages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = packages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52A74B1B83CBAB000F4383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52A74C1B83CBAB000F4383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,9 +55,14 @@
 		2E52A7621B83CBAB000F4383 /* packagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packagesTests.swift; sourceTree = "<group>"; };
 		2E52A76C1B83D34A000F4383 /* PackageListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageListTableViewController.swift; sourceTree = "<group>"; };
 		2E5333381B8E50C4007C6EA6 /* EmailHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
+		2E58E7461BC4C19B0045CF8E /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		2E58E7481BC4C1B20045CF8E /* ContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		2E626BBF1B8BC0E500089551 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		2E626BC11B8BC7F900089551 /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
 		2E626BC31B8BC81500089551 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		2E8DACA01BC4C40C00DBA173 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2E8DACA11BC4C40C00DBA173 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		2E8DACA41BC4C59000DBA173 /* ApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
 		2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTableViewCell.swift; sourceTree = "<group>"; };
 		2E9EC9461B8662A3000EF555 /* packages-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "packages-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C02037AFF63546F79BB63BB /* Pods_packages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_packages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +89,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E4294A01BC4BF2900FDC95B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2E5333381B8E50C4007C6EA6 /* EmailHelper.swift */,
+				2E8DACA41BC4C59000DBA173 /* ApiHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		2E4294A21BC4BF3900FDC95B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E8DACA01BC4C40C00DBA173 /* Contact+CoreDataProperties.swift */,
+				2E8DACA11BC4C40C00DBA173 /* Contact.swift */,
+				2E626BC31B8BC81500089551 /* Employee.swift */,
+				2E4294A31BC4BF4B00FDC95B /* Package.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		2E52A73E1B83CBAB000F4383 = {
 			isa = PBXGroup;
 			children = (
@@ -103,14 +137,14 @@
 				2E9EC8E81B8518F3000EF555 /* PackageTableViewCell.swift */,
 				2E2A42731B8666C3007C261C /* ScanObjcViewController.h */,
 				2E2A42741B8666C3007C261C /* ScanObjcViewController.m */,
-				2E9EC9461B8662A3000EF555 /* packages-Bridging-Header.h */,
 				2E626BBF1B8BC0E500089551 /* DetailsTableViewController.swift */,
 				2E626BC11B8BC7F900089551 /* EmployeeTableViewController.swift */,
-				2E626BC31B8BC81500089551 /* Employee.swift */,
-				2E5333381B8E50C4007C6EA6 /* EmailHelper.swift */,
+				2E58E7461BC4C19B0045CF8E /* ContactsTableViewController.swift */,
+				2E8DAC9F1BC4C36500DBA173 /* Stores */,
+				2E4294A21BC4BF3900FDC95B /* Models */,
+				2E4294A01BC4BF2900FDC95B /* Helpers */,
 				2E52A7501B83CBAB000F4383 /* Main.storyboard */,
 				2E52A7531B83CBAB000F4383 /* Images.xcassets */,
-				2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */,
 				2E52A74A1B83CBAB000F4383 /* Supporting Files */,
 			);
 			path = packages;
@@ -119,6 +153,9 @@
 		2E52A74A1B83CBAB000F4383 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2E52A7551B83CBAB000F4383 /* LaunchScreen.xib */,
+				2E4CCFAB1BC4C2D80052DD97 /* packages.xcdatamodeld */,
+				2E9EC9461B8662A3000EF555 /* packages-Bridging-Header.h */,
 				2E52A74B1B83CBAB000F4383 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -139,6 +176,14 @@
 				2E52A7611B83CBAB000F4383 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E8DAC9F1BC4C36500DBA173 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E7481BC4C1B20045CF8E /* ContactStore.swift */,
+			);
+			name = Stores;
 			sourceTree = "<group>";
 		};
 		B830F610FAD09139B7FCA3DA /* Frameworks */ = {
@@ -314,9 +359,16 @@
 			files = (
 				2E52A76D1B83D34A000F4383 /* PackageListTableViewController.swift in Sources */,
 				2E626BC41B8BC81500089551 /* Employee.swift in Sources */,
+				2E58E7471BC4C19B0045CF8E /* ContactsTableViewController.swift in Sources */,
 				2E9EC8E91B8518F3000EF555 /* PackageTableViewCell.swift in Sources */,
+				2E4CCFAD1BC4C2D80052DD97 /* packages.xcdatamodeld in Sources */,
+				2E4294A41BC4BF4B00FDC95B /* Package.swift in Sources */,
+				2E8DACA31BC4C40C00DBA173 /* Contact.swift in Sources */,
 				2E52A74D1B83CBAB000F4383 /* AppDelegate.swift in Sources */,
+				2E8DACA21BC4C40C00DBA173 /* Contact+CoreDataProperties.swift in Sources */,
+				2E8DACA51BC4C59000DBA173 /* ApiHelper.swift in Sources */,
 				2E5333391B8E50C5007C6EA6 /* EmailHelper.swift in Sources */,
+				2E58E7491BC4C1B20045CF8E /* ContactStore.swift in Sources */,
 				2E626BC21B8BC7F900089551 /* EmployeeTableViewController.swift in Sources */,
 				2E626BC01B8BC0E500089551 /* DetailsTableViewController.swift in Sources */,
 				2E2A42751B8666C3007C261C /* ScanObjcViewController.m in Sources */,
@@ -542,6 +594,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E4CCFAB1BC4C2D80052DD97 /* packages.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E4CCFAC1BC4C2D80052DD97 /* packages.xcdatamodel */,
+			);
+			currentVersion = 2E4CCFAC1BC4C2D80052DD97 /* packages.xcdatamodel */;
+			path = packages.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2E52A73F1B83CBAB000F4383 /* Project object */;
 }
